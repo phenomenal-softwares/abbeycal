@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/126c863153.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <div class="calc-body">
+   <div class="logo-and-time">
+    <div id="logo">Phenomenal™</div>
+    <div id="dateTime">
+      <span id="clk"></span>
+      <span id="date"></span>
+    </div>
+   </div>
+  <div class="model-and-change-theme">
+    <div id="model">AbbeyCal v2.1</div>
+   <div id="change" onclick="change()">
+     <i class="fa-solid fa-sun"></i>
+     </div>
+  </div> 
+  <marquee id="greet">
+    <span id="grt"></span>
+    </marquee>
+ <div class="input-container">
+   <div id="userInput"></div>
+   <div id="result"></div>
+ </div>
+  <div id="scientific">
+   <button class="sci" onclick="AT_add('²')">x²</button>
+   <button class="sci" onclick="AT_add('³')">x³</button>
+ <button class="sci" onclick="AT_add('^')">x^</button>
+   <button class="sci" onclick="AT_add('√')">√</button>
+   <button class="sci" onclick="AT_add('∛')">∛</button>
+   <button class="sci" onclick="AT_add('sin ')">sin</button>
+   <button class="sci" onclick="AT_add('cos ')">cos</button>
+   <button class="sci" onclick="AT_add('tan ')">tan</button>
+   <button class="sci" onclick="AT_add('log ')">log</button>
+   <button class="sci" onclick="AT_add('π')">π</button>
+   <button class="sci" onclick="AT_add('sin⁻¹ ')">sin⁻¹</button>
+   <button class="sci" onclick="AT_add('cos⁻¹ ')">cos⁻¹</button>
+   <button class="sci" onclick="AT_add('tan⁻¹ ')">tan⁻¹</button>
+<button class="sci" onclick="AT_add('⁻¹')">x⁻¹</button>
+<button class="sci" onclick="AT_add('%')">%</button>
+   </div>
+  <div class="keys">
+   <button onclick="AT_add(7)">7</button>
+   <button onclick="AT_add(8)">8</button>
+   <button onclick="AT_add(9)">9</button>
+   <button onclick="AT_add(' * ')" class="comm">✖️</button>
+   <button onclick="AT_add(4)">4</button>
+   <button onclick="AT_add(5)">5</button>
+   <button onclick="AT_add(6)">6</button>
+   <button onclick="AT_add(' / ')" class="comm">➗</button>
+   <button onclick="AT_add(1)">1</button>
+   <button onclick="AT_add(2)">2</button>
+   <button onclick="AT_add(3)">3</button>
+   <button onclick="AT_add(' + ')" class="comm">➕</button>
+   <button onclick="AT_add('.')">.</button>
+   <button onclick="AT_add(0)">0</button>
+   <button onclick="cancel()">⬅️</button>
+   <button onclick="AT_add(' - ')" class="comm">➖</button>
+   <button onclick="cls()" class="clear">AC</button>
+   <button onclick="evaluateInput()" class="submit">=</button>
+    </div>
+  </div>
+  
+  <script>
+  function change() {
+    let changeIcon = document.getElementById("change");
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList == 'dark-mode') {
+    changeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>'
+    } else {
+      changeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>'
+    }
+  }
+</script>
+
+  <script src="script.js"></script>
+  
+ </body>
+</html>

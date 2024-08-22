@@ -1,0 +1,252 @@
+/* Define default (light mode) theme */
+:root {
+  --background-color: #e0e0e0;
+  --text-color: #333;
+  --button-background: #e0e0e0;
+  --button-shadow-light: #ffffff;
+  --button-shadow-dark: #bebebe;
+  --clear-bg-color: #f87070;
+  --submit-bg-color: #70f8a9;
+  --clear-text-color: white;
+  --submit-text-color: white;
+}
+
+/* Dark mode theme variables */
+.dark-mode {
+  --background-color: #333;
+  --text-color: #e0e0e0;
+  --button-background: #444;
+  --button-shadow-light: #555;
+  --button-shadow-dark: #222;
+  --clear-bg-color: #d9534f;
+  --submit-bg-color: #5cb85c;
+  --clear-text-color: white;
+  --submit-text-color: white;
+}
+
+/* Basic styles for body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Neomorphism container */
+.calc-body {
+  width: 400px;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 8px 8px 20px var(--button-shadow-dark), -8px -8px 20px var(--button-shadow-light);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Logo and Time Section */
+.logo-and-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#dateTime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 5px;
+  background-color: var(--background-color);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: inset 5px 5px 10px var(--button-shadow-dark), inset -5px -5px 10px var(--button-shadow-light);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#clk, #date {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Model and Change Theme Section */
+.model-and-change-theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#model {
+  font-size: 1.2rem;
+}
+
+#change {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Greet Section */
+#greet {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+/* Input Container */
+.input-container {
+  height: 50px;
+  padding: 10px;
+  background-color: var(--background-color);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: inset 5px 5px 10px var(--button-shadow-dark), inset -5px -5px 10px var(--button-shadow-light);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#userInput, #result {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  overflow: hidden; /* Ensure content does not overflow */
+}
+
+/* Scientific Buttons */
+#scientific {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sci {
+  padding: 10px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--button-background);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px var(--button-shadow-dark), -5px -5px 10px var(--button-shadow-light);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.sci:active {
+  box-shadow: inset 5px 5px 10px var(--button-shadow-dark), inset -5px -5px 10px var(--button-shadow-light);
+}
+
+/* Keys Section */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.keys button {
+  padding: 15px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background-color: var(--button-background);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px var(--button-shadow-dark), -5px -5px 10px var(--button-shadow-light);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.keys button:active {
+  box-shadow: inset 5px 5px 10px var(--button-shadow-dark), inset -5px -5px 10px var(--button-shadow-light);
+}
+
+/* Clear and Submit Buttons */
+.clear, .submit {
+  grid-column: span 2;
+  font-size: 1.2rem;
+  padding: 15px;
+}
+
+.clear {
+  background-color: var(--clear-bg-color);
+  color: var(--clear-text-color);
+}
+
+.submit {
+  background-color: var(--submit-bg-color);
+  color: var(--submit-text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calc-body {
+    width: 90%;
+    padding: 15px;
+  }
+
+  #scientific {
+    grid-template-columns: repeat(5, 1fr); /* Reduce number of columns on smaller screens */
+    gap: 8px;
+  }
+
+  .keys {
+    grid-template-columns: repeat(4, 1fr); /* Same layout for smaller screens */
+    gap: 8px;
+  }
+
+  .sci, .keys button {
+    padding: 12px; /* Reduce padding on smaller screens */
+    font-size: 1rem;
+  }
+
+  .clear, .submit {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    max-height: 95vh;
+  }
+  .calc-body {
+    width: 100%;
+    padding: 10px;
+  }
+  .logo-and-time {
+    margin-bottom: -5px;
+  }
+  .model-and-change-theme {
+    margin-bottom: 2px;
+  }
+
+  #scientific {
+    grid-template-columns: repeat(5, 1fr); /* Further reduce columns on smaller screens */
+  }
+  .sci {
+    padding: 7px;
+    font-size: 0.7rem;
+  }
+
+  .keys button {
+    padding: 12px;
+    font-size: 1.0rem;
+  }
+
+  .clear, .submit {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  #logo {
+    font-size: 1.2rem;
+  }
+
+  #model {
+    font-size: 1rem;
+  }
+}
